@@ -1,7 +1,7 @@
-import { createClient } from '@supabase/supabase-js';
 import GPT3Tokenizer from 'gpt3-tokenizer';
 import { OpenAIStream, OpenAIStreamPayload } from '../../utils/OpenAIStream';
 import { fetchEmbeddings, fetchModerations } from '../../utils/OpenAIReq';
+import { supabase } from '../../utils/Supabase';
 
 if (!process.env.OPENAI_API_KEY) {
   throw new Error('Missing env var from OpenAI');
@@ -36,9 +36,8 @@ const handler = async (req: Request): Promise<Response> => {
   });
 
   const [{ embedding }] = embeddingResponse.data;
-  const supabaseClient = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
 
-  const { error: matchError, data: documents } = await supabaseClient.rpc('match_documents', {
+  const { error: matchError, data: documents } = await supabase.rpc('match_documents', {
     query_embedding: embedding,
     similarity_threshold: 0.78,
     match_count: 10,
