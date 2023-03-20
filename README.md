@@ -44,7 +44,8 @@ create table documents (
 create or replace function match_documents (
   query_embedding vector(1536),
   similarity_threshold float,
-  match_count int
+  match_count int,
+  min_content_length int
 )
 returns table (
   id bigint,
@@ -62,7 +63,8 @@ begin
     documents.url,
     1 - (documents.embedding <=> query_embedding) as similarity
   from documents
-  where 1 - (documents.embedding <=> query_embedding) > similarity_threshold
+  where length(documents.content) >= min_content_length
+  and 1 - (documents.embedding <=> query_embedding) > similarity_threshold
   order by documents.embedding <=> query_embedding
   limit match_count;
 end;
