@@ -25,6 +25,9 @@ const Home: NextPage = () => {
 
   const generateAnswer = async (e: KeyboardEvent) => {
     e.preventDefault();
+    if (loading) {
+      return;
+    }
     setAanswer('');
     setLoading(true);
 
