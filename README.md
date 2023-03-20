@@ -17,7 +17,7 @@ Technologies used:
 
 ## Running Locally
 
-### Set up Infra
+### Set up Infrastructure
 
 - We will use [Supabase](https://supabase.com/) for the infra setup.
 - Create a Supabase account and project at https://app.supabase.com/sign-in. NOTE: Supabase support for pgvector is relatively new (02/2023), so it's important to create a new project if your project was created before then.
