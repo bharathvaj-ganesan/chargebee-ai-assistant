@@ -69,8 +69,12 @@ const MarkdownComponents: object = {
         {children}
       </SyntaxHighlighter>
     ) : (
-      <code className={className} {...props} />
+      <code>{children}</code>
     );
+  },
+  pre({ ...props }) {
+    const children = typeof props.children === 'string' || Array.isArray(props.children) ? props.children : '';
+    return <pre>{children}</pre>;
   },
 };
 

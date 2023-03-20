@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* pre > :not(div) {
+  
+} */
+
+pre:not(:has(div)) {
+  padding: 1em;
+  margin: 0.5em 0px;
+  background: rgb(40, 44, 52);
+  color: rgb(171, 178, 191);
+  margin: 0.5em 0px;
+}

@@ -34,6 +34,7 @@
   "devDependencies": {
     "@types/common-tags": "^1.8.1",
     "@types/node": "18.11.3",
+    "@types/parse-numeric-range": "^0.0.1",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@types/react-syntax-highlighter": "^15.5.6",

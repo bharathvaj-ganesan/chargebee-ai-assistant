@@ -25,6 +25,7 @@ const Home: NextPage = () => {
 
   const generateAnswer = async (e: KeyboardEvent) => {
     e.preventDefault();
+    setAanswer('');
     setLoading(true);
 
     // API logic
