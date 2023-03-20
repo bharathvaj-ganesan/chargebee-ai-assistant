@@ -5,10 +5,11 @@ export default function Footer() {
     <footer className="text-center h-20 w-full sm:pt-2 pt-4 border-t mt-5 px-3 space-y-3 sm:mb-0 mb-3">
       <div>
         <i>
-          Note: This AI assistant is currently trained only few pages @{' '}
-          <a className="underline" href="https://www.chargebee.com/docs/2.0/" target="_blank" rel="noreferrer">
-            https://www.chargebee.com/docs/2.0/
-          </a>
+          Note: This AI assistant is currently trained only few pages.
+          <Link href="/info" className="ml-1 underline">
+            Click here
+          </Link>{' '}
+          to know more.
         </i>
       </div>
       <div className="flex sm:flex-row flex-col justify-between items-center">
