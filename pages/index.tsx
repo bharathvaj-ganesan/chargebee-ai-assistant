@@ -75,7 +75,7 @@ const Home: NextPage = () => {
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4">
         <h1 className="sm:text-4xl text-2xl max-w-[708px] font-bold text-slate-900">Ask me anything about Chargebee 🙂</h1>
         <div className="max-w-xl w-full">
-          <form method="post" onSubmit={(e) => generateAnswer(e)}>
+          <form method="post" onSubmit={(e: any) => generateAnswer(e)}>
             <div className="relative mt-10">
               <input
                 placeholder="What is Chargebee and what does Subscription Billing mean?"

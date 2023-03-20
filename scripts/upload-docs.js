@@ -15,14 +15,14 @@ if (!client.url || !client.key) {
   process.exit(1);
 }
 
-const supabaseClient = createClient(client.url!, client.key!);
+const supabaseClient = createClient(client.url, client.key);
 
 const configuration = new Configuration({ apiKey: process.env.OPENAI_API_KEY });
 const openAi = new OpenAIApi(configuration);
 const [content] = process.argv.slice(2);
 const urls = content.split(',');
 
-async function upload(urls: string[]) {
+async function upload(urls) {
   const documents = await getDocuments(urls);
 
   if (!documents.length) {
@@ -48,7 +48,7 @@ async function upload(urls: string[]) {
   }
 }
 
-async function getDocuments(urls: string[]) {
+async function getDocuments(urls) {
   const documents = [];
   for (const url of urls) {
     const response = await fetch(url);
