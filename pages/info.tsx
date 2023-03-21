@@ -20,7 +20,7 @@ export default function InfoPage({ urls, error }: { urls: any[]; error: any }) {
 
       <Header />
       <main className="flex flex-1 w-full flex-col items-center justify-center px-4">
-        <h1 className="text-2xl max-w-[708px] font-bold text-slate-900">Bot has been currently context on these docs.</h1>
+        <h1 className="text-2xl max-w-[708px] font-bold text-slate-900">Bot currently has context on these docs.</h1>
         <div className="w-full mt-4">
           {urls.map((url) => (
             <li key={url}>
