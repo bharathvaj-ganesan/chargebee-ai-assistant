@@ -41,5 +41,5 @@ export default function InfoPage({ urls, error }: { urls: any[]; error: any }) {
 export async function getStaticProps() {
   const { data: urls, error } = await supabase.from('distinct_documents').select();
 
-  return { props: { urls: urls?.map(({ url }) => url), error }, revalidate: 3600 };
+  return { props: { urls: urls?.map(({ url }) => url).sort(), error }, revalidate: 3600 };
 }
